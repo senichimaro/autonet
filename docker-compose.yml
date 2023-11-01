@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+  nginx:
+    container_name: autonet_backend
+    restart: always
+    image: nginx
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - network_autonet
+  nextjs:
+    container_name: autonet_nextjs
+    restart: always
+    image: puzzledotscode/poc_client
+    # build: 
+    #   context: ./nextjs/
+    #   dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    networks:
+      - network_autonet
+  apollo:
+    container_name: autonet_apollo
+    restart: always
+    image: puzzledotscode/poc_server
+    # build: 
+    #   context: ./apollo/
+    #   dockerfile: Dockerfile
+    ports:
+      - 4000:4000
+    networks:
+      - network_autonet
+  express:
+    container_name: autonet_express
+    restart: always
+    build: 
+      context: ./express/
+      dockerfile: Dockerfile
+    ports:
+      - 5000
+    networks:
+      - network_autonet
+  mongodb:
+    container_name: autonet_mongo
+    image: mongo
+    ports:
+      - 27017:27017
+    networks:
+      - network_autonet
+    logging:
+      driver: none
+networks:
+  network_autonet:
+    driver: bridge
