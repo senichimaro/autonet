@@ -13,10 +13,10 @@ services:
   nextjs:
     container_name: autonet_nextjs
     restart: always
-    image: puzzledotscode/poc_client
-    # build: 
-    #   context: ./nextjs/
-    #   dockerfile: Dockerfile
+    # image: puzzledotscode/poc_client
+    build: 
+      context: ./nextjs/
+      dockerfile: Dockerfile
     ports:
       - 3000:3000
     networks:

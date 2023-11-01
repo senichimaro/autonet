@@ -123,6 +123,24 @@ const Page = ({ getPostId }) => {
 
 ---
 
+
+# Card Model
+
+```json
+{
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut...",
+  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+},
+```
+
+
+
+
+
+
+
 # Run from Docker
 
 * Server puzzledotscode/poc_client

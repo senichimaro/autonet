@@ -1,5 +1,5 @@
+import Card from "../elements/Card/Card";
 import { useQuery, gql } from "@apollo/client";
-import Link from "next/link";
 
 const QUERY = gql`
   query Query {
@@ -17,13 +17,15 @@ export default function Home() {
   if (error) return <p>...error :(</p>;
   return (
     <>Posts
-        <ol>
+        <ol className="d-flex flex-wrap justify-content-between">
           {data.getPosts.map((post) => (
-            <li key={post.id}>
-              <Link href={`${post.id}`}>
-              {post.title}
-              </Link>
-            </li>
+              <Card 
+                key={post.id} 
+                title={post.title} 
+                body={post.body} 
+                userId={post.userId} 
+                id={post.id}
+              />
           ))}
         </ol>
     </>

@@ -1,6 +1,6 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 
-import '../styles.css'
+import '../bootstrap.css'
 
 const client = new ApolloClient({
   uri: "http://localhost:4000",
