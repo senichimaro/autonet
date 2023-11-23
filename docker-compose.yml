@@ -24,10 +24,10 @@ services:
   apollo:
     container_name: autonet_apollo
     restart: always
-    image: puzzledotscode/poc_server
-    # build: 
-    #   context: ./apollo/
-    #   dockerfile: Dockerfile
+    # image: puzzledotscode/poc_server
+    build: 
+      context: ./apollo/
+      dockerfile: Dockerfile
     ports:
       - 4000:4000
     networks:
