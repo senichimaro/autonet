@@ -13,7 +13,8 @@ services:
   nextjs:
     container_name: autonet_nextjs
     restart: always
-    image: puzzledotscode/poc_client
+    image: senichimaro/frontend-nextjs-4apollo
+    # image: puzzledotscode/poc_client
     # build: 
     #   context: ./nextjs/
     #   dockerfile: Dockerfile
